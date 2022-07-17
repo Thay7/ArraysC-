@@ -4,20 +4,33 @@ using namespace std;
 int main()
 {
     int V[20];
-    int n;
-    int cont;
+    int valor, numero;
+    int cont = 0;
 
-    for(int i = 0; i < 20; i++)
+    for (int i = 0; i < 20; i++)
     {
         cout << "Digite um valor: ";
-        cin >> n;
+        cin >> valor;
 
-        V[i] = n;
+        V[i] = valor;
     }
 
     cout << "Digite um número para verificar se ele se encontra no vetor: ";
+    cin >> numero;
 
-    if(n == V[i]) {
-        cont++;
+    for (int j = 0; j < 20; j++)
+    {
+        if (numero == V[j])
+        {
+            cont++;
+        }
+    }
+    if (cont == 1)
+
+        cout << "O número " << numero << " aparece " << cont << " vez no vetor!";
+
+    else if (cont > 1)
+    {
+        cout << "O número " << numero << " aparece " << cont << " vezes no vetor!";
     }
 }
