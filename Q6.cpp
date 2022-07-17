@@ -1,3 +1,5 @@
+//Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor de 20 elementos, cujos valores deverão ser compostos pelos elementos intercalados dos dois outrosvetores.
+
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -11,7 +13,7 @@ int main (int argc, char const* agrv[])
     int B[10];
     int C[20];
 
-    for(int i =0; i < 10; i++)
+    for(int i = 0; i < 10; i++)
     {
         aleatorio = rand()%(maior-menor+1) + menor;
         A[i] = aleatorio;
@@ -37,6 +39,9 @@ int main (int argc, char const* agrv[])
             C[k] = B[j];
             j = j + 1;
         }
+
+        cout << C[k] << "\n";
     }
 
+    
 }
