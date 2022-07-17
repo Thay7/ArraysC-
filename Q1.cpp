@@ -1,3 +1,5 @@
+//Faça um Programa que preencha um vetor de 5 números inteiros e mostre-os.
+
 #include <iostream>
 #include <ctime>
 using namespace std;
