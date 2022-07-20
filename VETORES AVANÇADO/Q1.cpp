@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
     {
         cout << pares[l] << ", ";
     }
-    for (int l = cont - 1; l > 0; l--)
+    for (int l = cont2 - 1; l > 0; l--)
     {
         cout << impares[l] << ", ";
     }
