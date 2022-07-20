@@ -6,7 +6,7 @@ using namespace std;
 
 int main (int argc, char const* agrv[])
 {
-    srand((unsigned)time(0));
+    
     int maior = 10, menor = 1;
     int aleatorio;
     int A[10];
