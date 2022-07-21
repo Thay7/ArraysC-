@@ -1,3 +1,5 @@
+// Faça um algoritmo para preencher um vetor de 20 números. Após isto, deverá ser lido mais um número qualquer e verificar se esse número existe no vetor ou não. Se existir, o algoritmo deve pedir um novo número.
+
 #include <iostream>
 using namespace std;
 
