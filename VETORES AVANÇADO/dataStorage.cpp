@@ -6,9 +6,12 @@ using namespace std;
 int main()
 {
     int opcao;
-    string nome;
-    int nota1;
-    int nota2;
+    string cadastrarNome;
+    string consultarNome;
+    string menu;
+    float nota1;
+    float nota2;
+    float media;
 
    while (opcao != 5)
     {
@@ -18,21 +21,50 @@ int main()
         cout << "3 - Alterar dados de aluno" << endl;
         cout << "4 - Consultar média da turma" << endl;
         cout << "5 - Sair" << endl;
+        cout << endl;
         cout << "Opção: ";
         cin >> opcao;
 
         switch (opcao)
         {
+            
         case 1: 
-
-            cout << "Nome do aluno: ";
-            cin >> nome;
-            cout << "Digite a nota 1: ";
+        
+            system("clear");
+            cout << "      CADASTRAR ALUNO" << endl;
+            cout << endl;
+            cout << "Nome: ";
+            cin >> cadastrarNome;
+            cout << "Nota 1: ";
             cin >> nota1;
-            cout << "Digite a nota 2: ";
+            cout << "Nota 2: ";
             cin >> nota2;
+            
+            media = (nota1+nota2)/2;
+            
+            cout << endl;
+            cout << "Dados cadastrados com sucesso!";
+            cout << endl;
+            system("clear");
+            
+            if(menu == menu){
+                
+            }
+            
         break;
 
+        case 2: 
+            
+            cout << "Informe o nome do aluno: ";
+            cin >> consultarNome;
+            
+            if(consultarNome == cadastrarNome)
+            {
+                cout << "Nota 1: " << nota1 << endl;
+                cout << "Nota 2: " << nota2 << endl;
+                cout << "Média: " << media;
+                break;
+            }
         }
     }
 }
