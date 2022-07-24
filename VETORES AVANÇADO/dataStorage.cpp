@@ -22,6 +22,8 @@ int main()
     string nomeParaAlterar;
     string aux;
     float auxNota;
+    float somaMediaTurma = 0;
+    float mediaDaTurma = 0;
 
     while (opcao != 5)
     {
@@ -56,6 +58,8 @@ int main()
 
             alunos[totalDeAlunosCadastrados].media = media;
             totalDeAlunosCadastrados++;
+
+            somaMediaTurma += media;
 
             system("clear");
             break;
@@ -125,9 +129,11 @@ int main()
             break;
         }
 
-        case 4: 
+        case 4:
         {
-           
+            mediaDaTurma = somaMediaTurma/totalDeAlunosCadastrados;
+
+            cout << "A média da turma é: " << mediaDaTurma << endl;
         }
         }
     }
