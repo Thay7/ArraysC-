@@ -1,30 +1,35 @@
-// Dados dois vetores de tamanho N, faça um algoritmo que diga se eles possuem conteúdoigual. Se existir, imprima o valor e os índices.
+// Dados dois vetores de tamanho N, faça um algoritmo que diga se eles possuem conteúdo igual. Se existir, imprima o valor e os índices.
 
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
+    srand((unsigned)time(0));
+    int maior = 100;
+    int menor = 0;
+    int aleatorio;
+    int arrayA[10];
+    int arrayB[10];
 
-    int arrayA[4];
-    int arrayB[4];
-    int v1, v2;
-    int i = 0;
-    int j = 0;
-
-    while (i < 4)
+    for (int i = 0; i < 10; i++)
     {
-        cout << "Digite um valor para o array A: ";
-        cin >> v1;
-        arrayA[i] = v1;
-        i++;
+        aleatorio = rand() % (maior - menor + 1) + menor;
+        arrayA[i] = aleatorio;
     }
-
-    while (j < 4)
+    for (int j = 0; j < 10; j++)
     {
-        cout << "Digite um valor para o array B: ";
-        cin >> v2;
-        arrayB[j] = v2;
-        j++;
+        aleatorio = rand() % (maior - menor + 1) + menor;
+        arrayB[j] = aleatorio;
+    }
+    for (int k = 0; k < 10; k++)
+    {
+        for (int l = 0; l < 10; l++)
+        {
+            if (arrayA[k] == arrayB[l])
+            {
+                cout << "O valor " << arrayA[k] << " se repete no indice " << k << " e " << l << endl;
+            }
+        }
     }
 }
