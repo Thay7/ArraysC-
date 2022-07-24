@@ -3,14 +3,25 @@
 #include <iostream>
 using namespace std;
 
-int main()
+struct Aluno
 {
-    int opcao;
-    string cadastrarNome;
-    string consultarNome;
+    string nome;
     float nota1;
     float nota2;
     float media;
+};
+
+int main()
+{
+    int tamanho = 10;
+    struct Aluno alunos[tamanho];
+    int totalDeAlunosCadastrados = 0;
+    int opcao;
+    float media;
+    string nomeParaConsultar;
+    string nomeParaAlterar;
+    string aux;
+    float auxNota;
 
     while (opcao != 5)
     {
@@ -24,53 +35,100 @@ int main()
         cout << "Opção: ";
         cin >> opcao;
 
+        system("clear");
+
         switch (opcao)
         {
 
         case 1:
-        {   
-            int cont = 0;
-            float notas[cont];
+        {
+            cout << "      CADASTRAR ALUNO" << endl;
+            cout << endl;
 
-                system("clear");
-                cout << "      CADASTRAR ALUNO" << endl;
-                cout << endl;
-                cout << "Nome: ";
-                cin >> cadastrarNome;
-                cout << "Nota 1: ";
-                cin >> nota1;
-                cont++;
-                cout << "Nota 2: ";
-                cin >> nota2;
-                cont++;
-                
-                for (int i = 0; i < cont; i++)
-            {
-                notas[i] = nota1;
-                notas[i] = nota2;
-            }
-                
-                media = (nota1 + nota2) / 2;
+            cout << "Nome: ";
+            cin >> alunos[totalDeAlunosCadastrados].nome;
+            cout << "Nota 1: ";
+            cin >> alunos[totalDeAlunosCadastrados].nota1;
+            cout << "Nota 2: ";
+            cin >> alunos[totalDeAlunosCadastrados].nota2;
 
-                cout << endl;
-                cout << "Dados cadastrados com sucesso!";
-                cout << endl;
-                
-            }
-        break;
+            media = (alunos[totalDeAlunosCadastrados].nota1 + alunos[totalDeAlunosCadastrados].nota2) / 2;
+
+            alunos[totalDeAlunosCadastrados].media = media;
+            totalDeAlunosCadastrados++;
+
+            system("clear");
+            break;
+        }
 
         case 2:
-
+        {
+            cout << "       CONSULTAR DADOS" << endl;
             cout << "Informe o nome do aluno: ";
-            cin >> consultarNome;
+            cin >> nomeParaConsultar;
 
-            if (consultarNome == cadastrarNome)
+            for (int i = 0; i < tamanho; i++)
             {
-                cout << "Nota 1: " << nota1 << endl;
-                cout << "Nota 2: " << nota2 << endl;
-                cout << "Média: " << media;
-                break;
+
+                if (nomeParaConsultar == alunos[i].nome)
+                {
+                    cout << "Nota 1: " << alunos[i].nota1 << endl;
+                    cout << "Nota 2: " << alunos[i].nota2 << endl;
+                    cout << "Média: " << alunos[i].media << endl;
+                }
             }
+            break;
+        }
+
+        case 3:
+        {
+            cout << "Informe o nome do aluno: ";
+            cin >> nomeParaAlterar;
+
+            cout << endl;
+
+            for (int i = 0; i < tamanho; i++)
+            {
+
+                if (nomeParaAlterar == alunos[i].nome)
+                {
+                    cout << "Digite o novo nome para alterar ou 0 para pular: ";
+                    cin >> aux;
+
+                    if (aux != "0")
+                    {
+
+                        alunos[i].nome = aux;
+                    }
+
+                    cout << endl;
+
+                    cout << "Nota 1: \nDigite a nova nota para alterar ou 0 para pular: ";
+                    cin >> auxNota;
+
+                    if (auxNota != 0)
+                    {
+
+                        alunos[i].nota1 = auxNota;
+                    }
+
+                    cout << "Nota 2: \nDigite a nova nota para alterar ou 0 para pular: ";
+                    cin >> auxNota;
+
+                    if (auxNota != 0)
+                    {
+
+                        alunos[i].nota2 = auxNota;
+                    }
+                }
+            }
+            break;
+        }
+
+        case 4: 
+        {
+           
+        }
         }
     }
 }
