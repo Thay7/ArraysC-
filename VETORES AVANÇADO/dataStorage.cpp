@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-struct Aluno
+struct Aluno        //struct para guardar os dados do aluno (depois todos os dados de cada aluno será armazenado em uma posição do array) 
 {
     string nome;
     float nota1;
@@ -14,8 +14,8 @@ struct Aluno
 int main()
 {
     int tamanho = 10;
-    struct Aluno alunos[tamanho];
-    int totalDeAlunosCadastrados = 0;
+    struct Aluno alunos[tamanho];       //declaração do vetor do struct 
+    int totalDeAlunosCadastrados = 0;  //variavel que vai contar quantos alunos foram cadastrados 
     int opcao;
     float media;
     string nomeParaConsultar;
@@ -48,7 +48,7 @@ int main()
             cout << endl;
 
             cout << "Nome: ";
-            cin >> alunos[totalDeAlunosCadastrados].nome;
+            cin >> alunos[totalDeAlunosCadastrados].nome;   //esse array 
             cout << "Nota 1: ";
             cin >> alunos[totalDeAlunosCadastrados].nota1;
             cout << "Nota 2: ";
@@ -57,9 +57,9 @@ int main()
             media = (alunos[totalDeAlunosCadastrados].nota1 + alunos[totalDeAlunosCadastrados].nota2) / 2;
 
             alunos[totalDeAlunosCadastrados].media = media;
-            totalDeAlunosCadastrados++;
+            totalDeAlunosCadastrados++; //variavel que é incrementada toda vez que um aluno é cadastrado
 
-            somaMediaTurma += media;
+            somaMediaTurma += media; //media da turma é somada toda vez que uma media nova de aluno é adicionada
 
             system("clear");
             break;
